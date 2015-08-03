@@ -1,0 +1,4 @@
+//Shell Command
+
+//Collections Export
+mongoexport -h 127.0.0.1 -p 27017 -d mongod4a -c reports -o ~/Desktop/Reports/reportsCollection.json --jsonArray

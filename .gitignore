@@ -3,3 +3,12 @@
 # Example .gitignore files: https://github.com/github/gitignore
 /bower_components/
 /node_modules/
+/www/config/oauth.json
+/www/test-mongodb.html
+/www/user-demo.html
+/www/user-social.html
+/www/report.json
+/www/js/pilotjs/gapi-oauth.js
+/www/js/pilotjs/user.js
+/www/js/pilotjs/userPage.js
+/www/js/pilotjs/configureSession.js

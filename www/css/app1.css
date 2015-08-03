@@ -1,0 +1,108 @@
+#target {
+/*    margin-top: 150px;*/
+}
+
+/*Attributi globali per l'impostazione della pagina'*/
+.responsive-height{
+    position: relative;
+    height: 50%;
+}
+
+.fullrow{
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.col {
+    position: relative;
+}
+
+body{
+    background-color: "black"
+}
+
+/* Attributi CSS della Mini App #1 : Tapping */
+/*-------------------------------------------*/
+
+/*Classi dimensioni*/
+.smallbutton {
+    line-height: 36px;
+    position: absolute;
+    height: 36px;
+    width: 36px;
+    top: 50%;
+    left : 50%;
+    margin-top: -18px;
+    margin-left: -18px;
+    text-align: center;
+}
+
+.mediumbutton {
+    line-height: 48px;
+    position: absolute;
+    height: 48px;
+    width: 48px;
+    top: 50%;
+    left : 50%;
+    margin-top: -24px;
+    margin-left: -24px;
+    text-align: center;
+}
+
+.largebutton {
+    line-height: 96px;
+    position: absolute;
+    height: 96px;
+    width: 96px;
+    text-align: center;
+    top: 50%;
+    left : 50%;
+    margin-top: -48px;
+    margin-left: -48px;
+    text-align: center;
+}
+
+
+/*Classi Forma*/
+.normal{
+    border-radius: 0px; /*RETTANGOLO*/
+}
+
+.round{
+    border-radius: 25%; /*STONDATO*/
+}
+
+.radius {
+    border-radius: 50%; /*CIRCOLARE*/
+}
+
+/*Classi Color Patterns*/
+.lowcontrast-button{
+    background-color: grey;
+    color: white;
+}
+
+.highcontrast-button{
+    background-color: black;
+    color: white;
+}
+
+
+.revercontrast-button{
+    background-color: white;
+    color: black;
+}
+
+.lowcontrast-screen{
+    background-color: white;
+}
+
+.highcontrast-screen{
+    background-color: white;
+}
+
+
+.revercontrast-screen{
+    background-color: black;
+}

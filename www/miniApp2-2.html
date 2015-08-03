@@ -1,0 +1,51 @@
+<!doctype html>
+<html class="no-js" lang="it">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />    
+        <meta name="mobile-web-app-capable" content="yes">
+        <title>UNIVPM - Preliminary Pilot: Gioco #2</title>
+        <!--Javascript Libraries Used-->
+        <script type="text/javascript" src="js/libs/jquery/jquery.js"></script>
+        <script type="text/javascript" src="js/libs/jquery-ui/jquery-ui.js"></script>
+        <script src="js/libs/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/pilotjs/appManager.js"></script>
+        <script type="text/javascript" src="js/pilotjs/app2-2.js"></script>
+        <!--CSS Files Used-->
+        <link rel="stylesheet" type="text/css" href="css/ionic.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/ionic.css"/>
+        <link rel="stylesheet" type="text/css" href="css/general.css"/>
+        <link rel="stylesheet" type="text/css" href="css/app2.css"/>
+    </head>
+
+    <body ng-app="d4a_pilot">
+        <!-- HEADER DELLA PAGINA -->
+        <div class="bar bar-header bar-positive">
+            <a href="miniApp1.html" id="back" class="button button-light button-outline">Indietro</a>
+            <h1 id="titlePage" class="title"></h1>
+            <a href="end.html" id="forward" class="button button-light button-outline hidden">Fine</a>
+        </div>
+        <div class="bar bar-subheader">
+            <h4 id="subtitle">Muovi il rettangolo colorato dentro quello bianco</h4>
+        </div>
+        <!--CORPO DELLA PAGINA-->
+        <ion-content [overflow-scroll="true"] [padding="true"] class="has-subheader">
+            <div id="content-area">
+                <div class="row row-center responsive-height fullrow">
+                    <div id="b11" class="col col-33"></div>
+                    <div id="b12" class="col col-33"><a  id="start" class="button button-large button-full button-positive padding">AVVIA SESSIONE</a></div>
+                    <div id="b13" class="col col-33"></div>
+                </div>
+                <div class="row row-center responsive-height fullrow">
+                    <div id="b21" class="col col-33"></div>
+                    <div id="b22" class="col col-33"></div>
+                    <div id="b23" class="col col-33"></div>
+                </div>
+            </div>
+        </ion-content>
+        <div class="bar bar-footer bar-positive">
+            <div id="footer-step" class="button button-clear"></div>
+           	<div id="footer-title" class="title"></div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+{cohabitantsObj : 
+	{
+	'Nothing' : 'Nessuno',
+	'Mate' : 'Coniuge',
+	'Children' : 'Figli',
+	'Grandchildren' : 'Nipoti',
+	'SonInLaw' : 'Generi-Nuore',
+	'Brothers' : 'Fratelli-Sorelle',
+	'Parent' : 'Madre-Padre',
+	'Assistant' : 'Assistente pagato (non parente)',
+	'Others' : 'Altri',
+	'Refuse' : 'Rifiuta'
+	}
+}
+
+
+{satisfactionAnswersObj :  
+	{
+	'VerySatisfied' : 'Molto soddisfatto', 
+	'Satisfied' : 'Soddisfatto',
+	'Neutral' : 'Nè soddisfatto né insoddisfatto',
+	'Dissatisfied' : 'Insoddisfatto', 		
+	'VeryDissatisfied' : 'Molto insoddisfatto',
+	'NotKnown':'Non sa',
+	'Refuse':'Rifiuta',
+	}
+}
+
+
+{healthcareObj : 
+	{
+	'Formal' : 'Assistenza formale', 
+	'FormalNotKnown' : 'Assistenza formale - NON SA', 
+	'Informal' : 'Assistenza informale',
+	'InformalNotKnown' : 'Assistenza informale - NON SA',
+	}
+}
+
+{caregivingObj : 
+ 	{
+	'Assistant' : 'Assistenza',
+	'AssistantNotKnown' :'Assistenza - NONSA',
+	'Help' : 'Aiuto', 
+	'HelpNotKnwon' : 'Aiuto - NON SA',
+	}
+}
+
+{servicesObj : 
+ 	{
+	'HardHealthcare' : 'Assistenza sanitaria a domicilio (importante)*',
+	'MediumHealthcare' : 'Assistenza sanitaria a domicilio (media)**', 
+	'Homework' : 'Lavori domestici', 
+	'Meals': 'Pasti', 
+	'TransferService' : 'Servizio di trasporto', 
+	'DayHospital' : 'Day hospital', 
+	'HomeAssistant' : 'Assistente sociale a domicilio', 
+	'Terapy' : 'Fisioterapia', 
+	'Others' : 'Altro'
+	}
+}
+
+{caregivers : 
+ 	{
+	'Family' : 'Famiglia, parenti',
+	'Neighbor' : 'Vicini', 
+	'Friend' : 'Amici', 
+	'Association' : 'Servizio volontario e associazioni', 
+	'Church' : 'Chiesa', 
+	'PrivateAssistant' : 'Assistente private a pagamento', 
+	'OtherCargiverService' :'Altro' 
+	}
+}

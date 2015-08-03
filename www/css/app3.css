@@ -1,0 +1,57 @@
+#start {
+    margin-top: 48px;
+/*    z-index: 0;*/
+}
+
+#target {
+    border-radius: 50%;
+    opacity: 0.5;
+    background: #29e;
+/*    position:absolute;*/
+}
+
+#endpoint {
+    border: 2px dashed;
+    border-color: black;
+    border-radius: 50%;
+/*    position: absolute;*/
+}
+
+#b11, #b12, #b13, #b21, #b22, #b23 { 
+    height: 100%;
+    position: relative;
+}
+
+/*Dimensioni degli oggetti*/
+.smallsize {
+    position: absolute;
+    top: 50%;
+    left : 50%;
+    margin-top: -75px;
+    margin-left: -75px;
+    text-align: center;
+    width: 150px;
+    height: 150px ; 
+}
+
+.mediumsize {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -120px;
+    margin-left: -120px;
+    text-align: center;
+    width: 240px ;
+    height: 240px ;
+}
+
+.largesize {
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    top: 50%;
+    left: 50%;
+    margin-top: -170px;
+    margin-left: -170px;
+    text-align: center;
+}

@@ -1,0 +1,82 @@
+{
+    "mainPath": "/www/",
+    "totalApp" : 5,
+    "app1":
+    {
+        "appCounter": 1,
+        "ID" : 1,
+        "SessionTime": 4000, 
+        "nextApp": "miniApp2.html",
+        "configuration" :
+        {
+            "buttons" : ["b11", "b12", "b13", "b21", "b22", "b23"],
+            "buttonSize" : ["smallbutton", "mediumbutton", "largebutton"],
+            "buttonShape" : ["normal", "round", "radius"],
+            "buttonPattern" :["lowcontrast-button", "highcontrast-button", "revercontrast-button"],
+            "screenPattern" : ["lowcontrast-screen", "highcontrast-screen", "revercontrast-screen"]
+        },
+        "DEBUG": false,
+        "NumStep": true
+    },
+    "app2":
+    {
+        "appCounter": 2,
+        "ID" : 2,
+        "SessionTime": 5000, 
+        "nextApp": "miniApp3.html",
+        "configuration" : 
+        {
+            "positions" : ["upleft","upcenter","upright","downleft","downcenter","downright"],
+            "positionDivs" : ["b11","b12","b13","b21","b22","b23"],
+            "dimensions" : ["smallsize","mediumsize","largesize"]
+        },
+        "DEBUG": false,
+        "NumStep": true
+    },
+    "app3": 
+    {
+        "appCounter": 3,
+        "ID" : 3,
+        "SessionTime": 7000, 
+        "nextApp": "miniApp1-2.html",
+         "configuration" : 
+        {
+            "positions" : ["b11","b12","b13","b21","b22","b23"],
+            "dimensions" : ["smallsize","mediumsize","largesize"]
+        },
+        "DEBUG": false,
+        "NumStep": true
+    },
+    "app4":
+    {
+        "appCounter": 4,
+        "ID" : 1,
+        "SessionTime": 4000, 
+        "nextApp": "miniApp2-2.html",
+        "configuration" : 
+        {
+            "buttons" : ["b11", "b12", "b13", "b21", "b22", "b23"],
+            "buttonSize" : ["smallbutton", "mediumbutton", "largebutton"],
+            "buttonShape" : ["normal", "round", "radius"],
+            "buttonPattern" :["lowcontrast-button", "highcontrast-button", "revercontrast-button"],
+            "screenPattern" : ["lowcontrast-screen", "highcontrast-screen", "revercontrast-screen"]
+        },
+        "DEBUG": false,
+        "NumStep": true
+    },
+     "app5":
+    {
+        "appCounter": 5,
+        "ID" : 2,
+        "SessionTime": 5000, 
+        "nextApp": "end.html",
+        "configuration" : 
+        {
+            "positions" : ["upleft","upcenter","upright","downleft","downcenter","downright"],
+            "positionDivs" : ["b11","b12","b13","b21","b22","b23"],
+            "dimensions" : ["smallsize","mediumsize","largesize"]
+        },
+        "DEBUG": false,
+        "NumStep": true
+    }
+}

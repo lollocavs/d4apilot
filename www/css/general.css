@@ -1,0 +1,45 @@
+html{
+    height: 100%;  
+}
+
+body{
+	height: 100%;
+}
+
+#content-area{
+    position: relative;
+    top:  49px;
+    bottom: 49px;
+    text-align: center;
+    height: 80%;
+}
+
+#register {
+	height: auto;
+}
+
+.bar-height {
+    height: 45px !important;
+}
+
+#subtitle {
+    text-align: center;
+}
+#footer {
+    cursor: default;
+}
+
+.hidden{
+    display: none;
+}
+
+.responsive-height{
+    position: relative;
+    height: 50%;
+}
+
+.fullrow{
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+}

@@ -1,0 +1,15 @@
+#scroll {
+    width:100%;
+    height: 500px;
+}
+
+#demographic-1 #demographic-2 {
+    width: auto;
+    height: auto;
+
+}
+
+#cohabitant {
+    width: 100%;
+}
+
