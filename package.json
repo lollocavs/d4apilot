@@ -13,5 +13,9 @@
     "express": "^4.9.8",
     "mongoose": "^3.8.30",
     "node-restful": "^0.1.17",
-  }
+    "jsonfile": "^2.2.3"
+  },
+    "engines" : {
+        "node": ">=0.8.0"
+    }
 }
