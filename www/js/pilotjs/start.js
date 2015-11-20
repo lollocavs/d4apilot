@@ -1,6 +1,8 @@
 $(document).ready(function(){
-    if (!localStorage.userCounter) localStorage.userCounter = 0;
-
+    if (!localStorage.userCounter || localStorage.userCounter.isNaN) {
+        localStorage.userCounter = 12;
+    }
+    
     $('#start').on('click',function(e){
         var ctr = parseInt(localStorage.userCounter,10);
         ctr++;
