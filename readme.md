@@ -32,71 +32,36 @@ The evaluation of the users' performance will be based on the analysis of:
 * Appropriateness of features characteristics.
 
 The app is able to monitoring the __user interaction__ of the different sessions and
-## Requirements
-* Node/ NPM
-* MongoDB
+## Required tools
+* Docker [[docs](https://docs.docker.com/install/)]
+* Docker-compose [[docs](https://docs.docker.com/compose/install/)]
 
-## Configuration
-The configuration of app is describes in the following steps. 
-The guide is written for OSX System (in particular step 1 and 2).
 
-### 1. MongoDB Installation (with Homebrew)
-Open Terminal and write the command below.
+## Running the app
+The app is refactored in order to work container-approach and to allow an easy deployment on every machine.
 
+After installing the required tools, you can simply run the following command:
 ```
-    brew update      
+npm run app
 ```
+and Docker provides to download all dependencies, compile the project and run the working entities (node app and MongoDB database).
 
-```
-brew install mongodb
-```
-
-For more details see [MondoDB Documentation](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/).
-
-### 2. Install Nodejs
-Download the installation package from [https://nodejs.org](https://nodejs.org) and follow the instructions.
-
-### 3. Download Repo and Nodejs Depencencies
-Download the application folder and enter in through terminal application.
-
-```
-cd ~/path-to-folder/d4apilot/
-```
-
-Install the dependencies of nodejs modules:
-
-```
-npm install
-```
-
-### 4. Start server-side application
-Open a shell tab in Terminal and Start MongoDb database typing:
-
-```
-mongod
-```
-
-In another tab start the server application:
-
-```
-cd ~/path-to-folder/d4apilot/
-```
-
-```
-node server.js
-```
 
 ### 5. Configure Network Connection
 The application is designed with a client-server architecture, so it is important that the server-side application (running on a pc or mac) and the client device (tablet) is in the same wifi network. 
 
-For more information see [Apple Documentation](https://support.apple.com/kb/PH13796?viewlocale=en_US&locale=us_US).
-
-When both physical device are connected to the same network, check the IP Address of server device (looks like ```xxx.xxx.xxx.xxx```). 
+When both physical device are connected to the same network, check the IP Address of server device (looks like ```xxx.xxx.xxx.xxx```).
 
 From the mobile device, go to the web site : ```http:/xxx.xxx.xxx.xxx:3000``` and start to use the application.
 
 ##Credits
-The mobile application is designed by: [Roberta Bevilacqua](mailto:robibevi@yahoo.it), [Lorenzo Cavalieri](mailto:lorenzo.cavalieri@univpm.it), [Silvia Ceccacci](mailto:s.ceccacci@univpm.it), [Francesca Gullà](mailto:f.gulla@univpm.it) and developed by [Lorenzo Cavalieri](mailto:lorenzo.cavalieri@univpm.it).
+The mobile application is designed by: 
+- [Roberta Bevilacqua](mailto:robibevi@yahoo.it)
+- [Lorenzo Cavalieri](mailto:lorenzocavalieri@icloud.com)
+- [Silvia Ceccacci](mailto:s.ceccacci@univpm.it)
+- [Francesca Gullà](mailto:f.gulla@univpm.it) 
+
+and developed by [Lorenzo Cavalieri](mailto:lorenzocavalieri@icloud.com).
 
 The application uses [ionic framework](http://ionicframework.com), with [nodejs](https://nodejs.org) and [mongoDB](https://www.mongodb.org) to manage the server-side implementation.
 
