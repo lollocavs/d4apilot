@@ -13,7 +13,7 @@
         "docker:mongo-export": "docker exec -i d4apilot_d4a_mongodb_1  mongoexport --db mongod4a --collection reports --type=json --out ./reports.json --jsonArray",
         "docker:mongo-copy-reports": "docker cp d4apilot_d4a_mongodb_1:/reports.json .",
         "reports:split": "node splitReports.js",
-        "export-reports": ""
+        "export-reports": "./exportdata.sh"
     },
     "author": "lollocavs",
     "license": "ISC",
