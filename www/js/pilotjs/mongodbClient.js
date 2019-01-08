@@ -1,17 +1,18 @@
 function postReport() {
-    
-    var url = 'http://' + location.hostname +':3000/api/reports';
+
+    var url = 'http://' + location.hostname + ':3000/api/reports';
     var method = "POST";
-    
-    var counter = parseInt(localStorage.userCounter,10);
+
+    var counter = parseInt(localStorage.userCounter, 10);
     var reportObj = new Object;
+    //TODO: Impostare anche identificativo della macchina???
     reportObj.name = 'report' + counter;
-    reportObj.appReports = (JSON.parse(localStorage.getItem('report'+counter))).appReports;
+    reportObj.appReports = (JSON.parse(localStorage.getItem('report' + counter))).appReports;
     var report = JSON.stringify(reportObj);
     $.ajax({
         type: method,
         url: url,
-        contentType:"application/json; charset=utf-8",
+        contentType: "application/json; charset=utf-8",
         dataType: 'json',
         data: report,
         xhrFields: {
