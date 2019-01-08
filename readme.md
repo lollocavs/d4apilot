@@ -40,9 +40,13 @@ The app is able to monitoring the __user interaction__ of the different sessions
 ## Running the app
 The app is refactored in order to work container-approach and to allow an easy deployment on every machine.
 
-After installing the required tools, you can simply run the following command:
+After installing the required tools, you can simply run the following command (if nodejs framework is installed):
 ```
 npm run app
+```
+otherwise
+```
+docker-compose up --build
 ```
 and Docker provides to download all dependencies, compile the project and run the working entities (node app and MongoDB database).
 
