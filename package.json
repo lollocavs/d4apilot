@@ -1,21 +1,26 @@
 {
-  "name": "d4apilot",
-  "version": "1.0.0",
-  "description": "Evalutating pilot to elderly people ability in technology",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.9.0",
-    "express": "^4.9.8",
-    "mongoose": "^3.8.30",
-    "node-restful": "^0.1.17",
-    "jsonfile": "^2.2.3"
-  },
-    "engines" : {
+    "name": "d4apilot",
+    "version": "1.0.0",
+    "description": "Evalutating pilot to elderly people ability in technology",
+    "main": "server.js",
+    "repository": "https://github.com/lollocavs/d4apilot.git",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js",
+        "docker:build": "docker build -t univpm/d4apilot .",
+        "docker:run": "docker run -p 3000:3000 -d univpm/d4apilot"
+    },
+    "author": "lollocavs",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.9.0",
+        "express": "^4.9.8",
+        "jsonfile": "^2.2.3",
+        "mongoose": "^5.3.15",
+        "morgan": "^1.9.1",
+        "node-restful": "^0.1.17"
+    },
+    "engines": {
         "node": ">=0.8.0"
     }
 }
