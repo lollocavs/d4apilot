@@ -5,6 +5,7 @@ var mongoDB = 'mongodb://d4a_mongodb:27017/mongod4a';
 // Dependencies
 var express = require('express');
 var morgan = require('morgan');
+var ip = require('ip');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
@@ -28,5 +29,8 @@ app.use(bodyParser.json());
 app.use('/api', require('./routes/api'));
 
 // Start server
-app.listen(3000);
-console.log('API is running on port 3000');
+app.listen(3000, () => {
+    console.log('API is running on port 3000');
+
+    console.log('********', '[Local IP Address]  is:', ip.address(), '********');
+});
