@@ -1,6 +1,6 @@
 //Configuration
 var serverExpress = 'http://localhost:3000';
-var mongoDB = 'mongodb://mongo:27017/mongod4a';
+var mongoDB = 'mongodb://d4a_mongodb:27017/mongod4a';
 
 // Dependencies
 var express = require('express');
