@@ -9,6 +9,7 @@
         "app": "docker-compose up --build",
         "start": "node server.js",
         "docker:build": "docker build -t univpm/d4apilot .",
+        "docker:clean": "docker rmi $(docker images -f 'dangling = true' -q)",
         "docker:run": "docker run -p 3000:3000 -d univpm/d4apilot",
         "docker:mongo-export": "docker exec -i d4apilot_d4a_mongodb_1  mongoexport --db mongod4a --collection reports --type=json --out ./reports.json --jsonArray",
         "docker:mongo-copy-reports": "docker cp d4apilot_d4a_mongodb_1:/reports.json .",
