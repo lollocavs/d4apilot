@@ -23,7 +23,7 @@ function getApp2Combinations() {
     combinations.sort(function() {
         return .5 - Math.random();
     });
-    console.log(combinations);
+    // console.log(combinations);
     // Limit combinations to users' number
     // return combinations.slice(0, userNumber);
     return combinations;
