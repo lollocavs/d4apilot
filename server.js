@@ -1,6 +1,6 @@
 //Configuration
 var serverExpress = 'http://localhost';
-var mongoDB = 'mongodb://d4a_mongodb:27017/mongod4a';
+var mongoDB = 'mongodb://d4a_mongodb/mongod4a';
 
 process.env.PORT = 3000;
 // process.env.HOST = 'http://localhost'
