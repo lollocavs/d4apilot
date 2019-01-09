@@ -1,6 +1,6 @@
 version: "2"
 services:
-  d4a_app:
+  d4a_app1:
     image: univpm/d4apilot
     restart: always
     build: .
@@ -8,6 +8,14 @@ services:
       - "3000:3000"
     links:
       - d4a_mongodb
+  # d4a_app2:
+  #   image: univpm/d4apilot
+  #   restart: always
+  #   build: .
+  #   ports:
+  #     - "4000:3000"
+  #   links:
+  #     - d4a_mongodb
   d4a_mongodb:
     image: mongo
     volumes:

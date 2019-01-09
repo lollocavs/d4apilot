@@ -14,6 +14,13 @@ RUN npm install
 
 # Bundle app source
 COPY . .
+# COPY www .
+# COPY server.js .
+# COPY routes .
+# COPY splitReports.js .
+# COPY reports .
+# COPY models .
+# COPY img .
 
 EXPOSE 3000
 CMD [ "npm", "start" ]
