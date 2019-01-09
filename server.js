@@ -1,6 +1,9 @@
 //Configuration
-var serverExpress = 'http://localhost:3000';
+var serverExpress = 'http://localhost';
 var mongoDB = 'mongodb://d4a_mongodb:27017/mongod4a';
+
+process.env.PORT = 3000;
+// process.env.HOST = 'http://localhost'
 
 // Dependencies
 var express = require('express');
@@ -11,11 +14,19 @@ var bodyParser = require('body-parser');
 
 
 // MongoDB
-mongoose.connect(mongoDB, { useNewUrlParser: true }, function(err, res) {
-    if (err) throw err;
-    console.log('Connessione stabilita');
-});
-
+// mongoose.connect(mongoDB, { useNewUrlParser: true }, function(err, res) {
+//     if (err) throw err;
+//     console.log('Connessione stabilita');
+// });
+var connectWithRetry = function() {
+    return mongoose.connect(mongoDB, function(err) {
+        if (err) {
+            console.error('Failed to connect to mongo on startup - retrying in 5 sec', err);
+            setTimeout(connectWithRetry, 5000);
+        }
+    });
+};
+connectWithRetry();
 
 // Express
 var app = express();
@@ -32,5 +43,5 @@ app.use('/api', require('./routes/api'));
 app.listen(3000, () => {
     console.log('API is running on port 3000');
 
-    console.log('********', '[Local IP Address]  is:', ip.address(), '********');
+    console.log('********', '[Local IP Address]  is:', ip.address(), process.env.PORT, '********');
 });
