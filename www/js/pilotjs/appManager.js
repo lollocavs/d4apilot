@@ -19,7 +19,7 @@ function getTitlePage(appCounter, totalApp) {
 }
 
 function getAppConfig(appName) {
-    // //! TEST CONFIGURATION
+    //! TEST CONFIGURATION
     // var url = './config/appConfig_test.json';
     var url = './config/appConfig.json';
     var request = $.ajax({
