@@ -11,8 +11,9 @@
     <script type="text/javascript" src="js/libs/jquery/jquery.js"></script>
     <!-- <script type="text/javascript" src="cordova.js"></script> -->
     <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/pilotjs/appManager.js"></script>
-    <script type="text/javascript" src="js/pilotjs/start.js"></script>
+    <!-- <script type="text/javascript" src="js/pilotjs/appManager.js"></script> -->
+    <script src="js/pilotjs/mongodbClient.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/pilotjs/report.js"></script>
     <!--CSS Files Used-->
     <link rel="stylesheet" type="text/css" href="lib/ionic/css/ionic.css">
     <link rel="stylesheet" type="text/css" href="css/general.css" />
@@ -21,11 +22,18 @@
 <body ng-controller="d4a_pilot">
     <!--HEADER DELLA PAGINA -->
     <div class="bar bar-header bar-positive bar-height">
-        <h1 class="title ">INTRODUZIONE</h1>
+        <h1 class="title ">LISTA DEI REPORT SALVATI</h1>
+        <a href="index.html" class="button button-light button-outline">Ritorna</a>
     </div>
     <!--CORPO DELLA PAGINA -->
     <ion-content>
         <div id="content-area">
+            <div id="report-list">
+                <h1>Non ci sono report disponibili</h1>
+            </div>
+        </div>
+
+        <!-- <div id="content-area">
             <div class="row row-center responsive-height fullrow">
                 <div class="col col-25"></div>
                 <div class="col col-50">
@@ -40,7 +48,7 @@
                 </div>
                 <div class="col col-25"></div>
             </div>
-        </div>
+        </div> -->
     </ion-content>
     <div class="bar bar-footer bar-positive"></div>
 </body>
