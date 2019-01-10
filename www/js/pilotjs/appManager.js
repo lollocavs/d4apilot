@@ -46,7 +46,8 @@ function getAppConfig(appName) {
 
 function getFileConfigJSON(appNumber, partNumber, user) {
     var fileName = './json/app';
-    if (user.length == 1) user = '0' + user;
+    if (user.length == 1) user = '00' + user;
+    if (user.length == 2) user = '0' + user;
     fileName += +appNumber + '_' + partNumber + user + '.json';
     return fileName;
 }
