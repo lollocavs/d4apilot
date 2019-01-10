@@ -85,9 +85,14 @@ function missingTapEventAttach() {
         if ((e.originalEvent.touches.length == 2) && (e.target.id !== "target")) {
             // OBSOLETE CODE
             //if ((e.touches.length == 2) && (e.target != $('#target'))) {
-            if (dataApp.DEBUG) alert('MissingTap');
+            console.log('Invalid Tap!');
             reportApp3.incrementInvalidCounter();
-        } else if ((e.target.id === 'start') && ($('#start')[0].hidden == false)) {}
+	}
+	else {
+		console.log('Zoom in action');
+		$('#target').panzoom('zoom');
+	}
+        //} else if ((e.target.id === 'start') && ($('#start')[0].hidden == false)) {}
     });
 
     //    
