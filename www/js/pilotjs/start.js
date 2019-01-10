@@ -1,6 +1,6 @@
 $(document).ready(function() {
     if (!localStorage.userCounter || localStorage.userCounter.isNaN) {
-        localStorage.userCounter = 1;
+        localStorage.userCounter = 0;
     }
 
     $('#start').on('click', function(e) {
