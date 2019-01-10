@@ -6,18 +6,20 @@ services:
     build: .
     ports:
       - "4000:3000"
-    links:
+    depends_on:
       - d4a_mongodb
-  # d4a_app2:
-  #   image: univpm/d4apilot
-  #   restart: always
-  #   build: .
-  #   ports:
-  #     - "5000:3000"
-  #   links:
-  #     - d4a_mongodb
+  d4a_app2:
+    image: univpm/d4apilot
+    restart: always
+    build: .
+    ports:
+      - "5000:3000"
+    depends_on:
+      - d4a_mongodb
   d4a_mongodb:
-    image: nonoroazoro/rpi-mongo
+    image: dhermanns/rpi-mongo
+    #image: nonoroazoro/rpi-mongo
+    #image: joseba/rpi-mongodb
     # volumes:
     #   - ./data:/data/db
     ports:
