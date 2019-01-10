@@ -7,7 +7,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "app": "docker-compose up",
-        "app:rpi": "docker-composye up --build -f docker-compose.yml",
+        "app:rpi": "docker-compose -f docker-compose.yml up",
         "start": "node server.js",
         "docker:build": "docker build -t univpm/d4apilot .",
         "docker:clean": "docker rmi $(docker images -f 'dangling = true' -q)",
