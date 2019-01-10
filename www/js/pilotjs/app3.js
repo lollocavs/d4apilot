@@ -79,24 +79,24 @@ function startAppSessionsAttach() {
 
 function missingTapEventAttach() {
     $("#content-area").on('touchstart', function(e) {
-            console.log('TOUCHES : ', e.originalEvent.touches.length);
-            console.log('TARGET ID : ', e.target.id);
-            //? Check if it is two-touch interaction and if the selected item is the target
-            if ((e.originalEvent.touches.length == 2) && (e.target.id !== "target")) {
-                // OBSOLETE CODE
-                //if ((e.touches.length == 2) && (e.target != $('#target'))) {
-                if (dataApp.DEBUG) alert('MissingTap');
-                reportApp3.incrementInvalidCounter();
-            } else if ((e.target.id === 'start')) && ($('#start')[0].hidden == false)) {}
+        console.log('TOUCHES : ', e.originalEvent.touches.length);
+        console.log('TARGET ID : ', e.target.id);
+        //? Check if it is two-touch interaction and if the selected item is the target
+        if ((e.originalEvent.touches.length == 2) && (e.target.id !== "target")) {
+            // OBSOLETE CODE
+            //if ((e.touches.length == 2) && (e.target != $('#target'))) {
+            if (dataApp.DEBUG) alert('MissingTap');
+            reportApp3.incrementInvalidCounter();
+        } else if ((e.target.id === 'start') && ($('#start')[0].hidden == false)) {}
     });
 
-//    
-//    $("#content-area").on('touchstart', function(event) {
-//        var target = $(event.target)[0];
-//        if (target.id!="start") { //Verifica che non sia stato selezionato il tasto start
-//            if (target.id!="target") reportApp3.incrementInvalidCounter();
-//        }
-//    });  
+    //    
+    //    $("#content-area").on('touchstart', function(event) {
+    //        var target = $(event.target)[0];
+    //        if (target.id!="start") { //Verifica che non sia stato selezionato il tasto start
+    //            if (target.id!="target") reportApp3.incrementInvalidCounter();
+    //        }
+    //    });  
 }
 
 function ObjectsCreation() {
