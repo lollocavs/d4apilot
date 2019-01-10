@@ -6,7 +6,8 @@
     "repository": "https://github.com/lollocavs/d4apilot.git",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "app": "docker-compose up --build",
+        "app": "docker-compose up",
+        "app:rpi": "docker-composye up --build -f docker-compose.yml",
         "start": "node server.js",
         "docker:build": "docker build -t univpm/d4apilot .",
         "docker:clean": "docker rmi $(docker images -f 'dangling = true' -q)",

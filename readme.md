@@ -46,7 +46,7 @@ npm run app
 ```
 otherwise
 ```
-docker-compose up --build
+docker-compose up
 ```
 and Docker provides to download all dependencies, compile the project and run the working entities (node app and MongoDB database).
 
