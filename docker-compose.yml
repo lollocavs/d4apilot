@@ -24,27 +24,3 @@ services:
     #   - ./data:/data/db
     ports:
       - "27017:27017"
-
-# Configuraione per lo sviluppo di due servizi gemelli parallelli
-# version: "2"
-# services:
-#   d4a_app1:
-#     image: univpm/d4apilot_1
-#     restart: always
-#     build: ./web1/
-#     ports:
-#       - "4000:3000"
-#     depends_on:
-#       - d4a_mongodb
-#   d4a_app2:
-#     image: univpm/d4apilot_1
-#     restart: always
-#     build: ./web2/
-#     ports:
-#       - "5000:3000"
-#     depends_on:
-#       - d4a_mongodb
-#   d4a_mongodb:
-#     image: dhermanns/rpi-mongo
-#     ports:
-#       - "27017:27017"
