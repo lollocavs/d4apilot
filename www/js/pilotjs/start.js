@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    if (!localStorage.userCounter || localStorage.userCounter.isNaN) {
+    if (!localStorage.userCounter || isNaN(localStorage.userCounter)) {
         localStorage.userCounter = 0;
     }
 
