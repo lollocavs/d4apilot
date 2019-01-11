@@ -25,6 +25,9 @@ var fileData = getFileConfigJSON(3, 0, user);
 getAppConfig('app3');
 var configurationData, MAX_STEP, timer;
 
+// GLOBAL VARIABLE OF TARGET
+var DIAMETER, MARGIN;
+
 //JSON FILE MANAGEMENT [sostituisce le matrici di configurazione dei pacchetti]
 var request = $.ajax({
     url: fileData,
@@ -58,51 +61,24 @@ function startAppSessionsAttach() {
         nextStepConfiguration(manager.getStep());
         missingTapEventAttach();
     });
-
-    //PROVA RISOLUZIONE TODO 2
-    //    var content = $('#content-area').panzoom({
-    //        disablePan: true,
-    //        disableZoom: true,
-    //        onStart : function(e,element){
-    //            if (element!=$('#target')) {
-    //                reportApp3.incrementValidCounter();
-    //                if (DEBUG) alert('Catched Valid Counter!');
-    //                
-    //            }
-    //            e.preventDefault();
-    //        },
-    //        onEnd: function(e,element,matrix) {},
-    //    });
-
 }
 
 
 function missingTapEventAttach() {
     $("#content-area").on('touchstart', function(e) {
-        console.log('TOUCHES : ', e.originalEvent.touches.length);
-        console.log('TARGET ID : ', e.target.id);
-        //? Check if it is two-touch interaction and if the selected item is the target
-
-        if ((e.originalEvent.touches.length == 2) && (e.target.id !== "target")) {
-            // OBSOLETE CODE
-            //if ((e.touches.length == 2) && (e.target != $('#target'))) {
-            console.log('Invalid Tap!');
-            reportApp3.incrementInvalidCounter();
-	}
-	else {
-		console.log('Zoom in action');
-		$('#target').panzoom('zoom');
-	}
-        //} else if ((e.target.id === 'start') && ($('#start')[0].hidden == false)) {}
+        console.log('[TOUCHES] : ', e.originalEvent.touches.length, '| TARGET ID : ', e.target.id);
+        // e.stopImmediatePropagation();
+        if (e.originalEvent.touches.length == 2) { // Check if it is two-touch interaction
+            if (e.target.id !== "target") { // Check if the selected item is the target
+                console.log('Invalid Tap!');
+                reportApp3.incrementInvalidCounter();
+                // e.originalEvent.touches = [];
+            } else {
+                // console.log('Zoom in action');
+                // $('#target').panzoom('zoom');
+            }
+        }
     });
-
-    //    
-    //    $("#content-area").on('touchstart', function(event) {
-    //        var target = $(event.target)[0];
-    //        if (target.id!="start") { //Verifica che non sia stato selezionato il tasto start
-    //            if (target.id!="target") reportApp3.incrementInvalidCounter();
-    //        }
-    //    });  
 }
 
 function ObjectsCreation() {
@@ -112,18 +88,55 @@ function ObjectsCreation() {
     var target = document.createElement('div');
     target.id = 'target';
     target.hidden = true;
-    target.setAttribute('class', 'smallsize');
+    target.setAttribute('class', 'pinch smallsize');
     target.style.zIndex = '100';
+
 
     var endpoint = document.createElement('div');
     endpoint.id = 'endpoint';
-    endpoint.setAttribute('class', 'mediumsize');
+    endpoint.setAttribute('class', 'mediumssize');
     endpoint.hidden = true;
     endpoint.style.zIndex = '99';
     endpoint.innerHTML = 'endpoint';
 
     divParent.append(target);
     divParent.append(endpoint);
+
+    endpoint = $('#endpoint');
+
+    makeTargetPinchable();
+}
+
+function makeTargetPinchable() {
+    // Hammer Init
+    var el = document.querySelector(".pinch");
+    var hammer = new Hammer(el, {
+        domEvents: true
+    });
+    hammer.get('pinch').set({ enable: true });
+
+    hammer.on('pinch', function(e) {
+        el.style.transform = `scale(${e.scale},${e.scale})`;
+    })
+
+    hammer.on('pinchend', function(e) {
+        console.log('[PINCHEND] E:', e);
+        target = $('#target');
+        endpoint = $('#endpoint');
+        scaleFactor = Number(target[0].style.transform.slice(6).split(',')[0]);
+        var delta = Math.abs(endpoint.width() - target.width() * scaleFactor);
+        console.log(`[DELTA] : ${delta} | [Valid Taps] : ${reportApp3.getValidCounter()} | [Invalid Taps] : ${reportApp3.getInvalidCounter()}`);
+
+        if (delta < 20) {
+            console.log("Task completato!");
+
+            finishTask();
+            el.style.transform = `scale(1, 1)`;
+        } else {
+            el.style.transform = `scale(1, 1)`;
+            console.log("Resetto l'elemento!");
+        }
+    })
 }
 
 function nextStepConfiguration(step) {
@@ -151,67 +164,20 @@ function nextStepConfiguration(step) {
     divParent.append(endpoint);
     divParent.append(target);
 
-
-    //DEBUG
-    if (dataApp.DEBUG) {
-        target.on('click', function(e) {
-            finishTask();
-            e.stopPropagation();
-            //        e.preventDefault();
-
-        });
-    }
-
-    target[0].hidden = true;
+    // target[0].hidden = true;
     target.removeClass();
+    target.addClass('pinch');
     target.addClass(dataApp.configuration.dimensions[targetSize]);
     target.css('zIndex', '1');
-    // Panzoom Initialization
-    var elem = $("#target").panzoom({
-        disablePan: true,
-        onStart: function(e, element) {
-            reportApp3.incrementValidCounter();
-            console.log('Start Zoom');
-        },
-        onEnd: function(e, element, matrix) {
 
-            var scalingFactor = element.getMatrix()[0];
-            var delta = Math.abs(endpoint.width() - target.width() * scalingFactor); //
-            //Debug
-            var Matrix = 'Matrix: ' + scalingFactor + "\n";
-            var Delta = 'Delta= ' + delta + "\n";
-            var ValidCtr = "ValidCounter: " + reportApp3.getValidCounter() + "\n";
-            var InvalidCtr = "Invalid Counter: " + reportApp3.getInvalidCounter() + "\n";
-            console.log('Delta : ', Delta);
-            if (delta < 10) {
-                if (dataApp.DEBUG) alert(Matrix + Delta + "Task completato!\n" + ValidCtr + InvalidCtr);
-                finishTask();
-            } else {
-                element.reset();
-                if (dataApp.DEBUG) alert(Matrix + Delta + "Resetto l'elemento!\n" + ValidCtr + InvalidCtr);
-            }
-        },
-
-    });
-    target[0].hidden = true;
-    target.removeClass();
-    target.addClass(dataApp.configuration.dimensions[targetSize]);
-    target.css('zIndex', '1');
-    if (dataApp.DEBUG) {
-        $("#target").on("mousewheel.focal", function(e) {
-            e.preventDefault();
-            var delta = e.delta || e.originalEvent.wheelDelta;
-            var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
-            $("#target").panzoom('zoom', zoomOut, {
-                increment: 0.1,
-                animate: false,
-                focal: e
-            })
-        })
-    }
     target.fadeIn();
     endpoint.fadeIn();
-    elem.panzoom('reset', false);
+    // target[0].hidden = false;
+    // endpoint[0].hidden = false;
+    DIAMETER = target.width();
+    MARGIN = Number(target.css('margin-top').split('px')[0]);
+    console.log('[DIAMETER] : ', DIAMETER, '| [MARGIN] : ', MARGIN);
+    // $('#target').panzoom('reset', false);
     reportApp3.Tstart = getMilliseconds();
     timer = window.setTimeout(function() { finishTask() }, dataApp.SessionTime);
 }
